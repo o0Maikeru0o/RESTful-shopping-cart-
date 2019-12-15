@@ -25,7 +25,7 @@ const inventory = [{
   }],
 }, {
   id: 'D',
-  image: 'https://mnickandros-coding-projects.s3.amazonaws.com/banana.jpeg',
+  image: 'https://mnickandros-coding-projects.s3.amazonaws.com/durian.jfif',
   description: 'Durian',
   unit_price: 0.15,
   volume_discounts: [],

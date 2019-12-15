@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Cart from './Cart';
-import Inventory from './Inventory';
+// import Cart from './Cart';
+import Item from './Item';
+// import Inventory from './Inventory';
+
+const Inventory = styled.div`
+  display: flex;
+  width: 75%;
+  height: 100%;
+  justify-content: center;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -14,19 +22,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getCart();
+    this.getInventory();
   }
 
   getInventory() {
     axios.get('/inventory').then((result) => {
-      console.log(result.data);
       this.setState({ inventory: result.data });
     });
   }
 
   getCart() {
     axios.get('/cart').then((result) => {
-      console.log(result.data);
       this.setState({ cart: result.data });
     });
   }
@@ -36,12 +42,23 @@ class App extends Component {
   // }
 
   render() {
-    const { cart } = this.state;
+    const { cart, inventory } = this.state;
+    const items = inventory.map((item) => (
+      <Item
+        key={item.id}
+        desc={item.description}
+        image={item.image}
+        price={item.unit_price}
+        volume={item.volume_discounts}
+      />
+    ));
     return (
-      <div>
-        <Inventory />
-        <Cart />
-      </div>
+
+      <Inventory>
+        {items}
+      </Inventory>
+
+
     );
   }
 }

@@ -3,54 +3,85 @@ import styled from 'styled-components';
 
 const ItemContainer = styled.div`
   display: block;
-  max-width: 70px;
+  margin: 5%;
+  max-width: 150px;
   height: 100%;
+  text-align: justify;
 `;
 
 const Image = styled.img`
-  width: 100%;
-  max-height: 60px;
+  width: 125px;
+  height: 142px;
 `;
 
 const ItemInfo = styled.div`
+  display: block;
   width: 100%;
-  max-height: 70%;
+  height: 60%;
 `;
 
 const Volume = styled.table`
+  font-size: 15px;
   width: 100%;
   max-height: 30%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid black;
+  }
 `;
 
-const Item = (props) => {
-  const {
-    image, description, unit_price, volume_discount,
-  } = props;
-  let number; const
-    price = 'N/A';
+const AddQuantity = styled.input`
+  type: number;
+`;
 
-  if (volume_discount.length > 0) {
-    volume_discount.map((disc) => {
+const Item = ({
+  image, desc, price, volume,
+}) => {
+  console.log('item props', desc);
+  let volumeInfo;
+
+  if (volume.length > 0) {
+    volumeInfo = volume.map((disc) => (
+      <tr key={disc.number}>
+        <td>{disc.number}</td>
+        <td>{disc.price}</td>
+      </tr>
+    ));
+  } else {
+    volumeInfo = (
       <tr>
-        <td>{number}</td>
-        <td>{price}</td>
-      </tr>;
-    });
+        <td>N/A</td>
+        <td>N/A</td>
+      </tr>
+    );
   }
 
   return (
     <ItemContainer>
-      <Image href={image} />
+      <Image src={image} alt={desc} />
       <ItemInfo>
-        {description}
-        {unit_price}
+        <h3>{desc}</h3>
+        Unit Price:
+        {' '}
+        {price}
         <Volume>
-          <tr>
-            <th>Volume Discount</th>
-            <th>Price</th>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Volume Pricing</th>
+            </tr>
+            <tr>
+              <td>Number</td>
+              <td>Price</td>
+            </tr>
+            {volumeInfo}
+          </tbody>
         </Volume>
       </ItemInfo>
+      <form>
+        <input type="number" name="quantity" />
+        <input type="submit" />
+      </form>
     </ItemContainer>
 
   );

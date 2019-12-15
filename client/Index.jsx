@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
-import App from './components/App.jsx';
+import App from './components/App';
 
 const GlobalStyle = createGlobalStyle`
   @media only screen and (min-width:1025px) {

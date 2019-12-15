@@ -22,5 +22,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    'no-plusplus': 'off'
   },
 };

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Cart from './Cart';
+import Inventory from './Inventory';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: '',
+      inventory: [],
+      cart: {},
     };
   }
 
@@ -14,17 +17,31 @@ class App extends Component {
     this.getCart();
   }
 
+  getInventory() {
+    axios.get('/inventory').then((result) => {
+      console.log(result.data);
+      this.setState({ inventory: result.data });
+    });
+  }
+
   getCart() {
-    axios.get('/api').then((result) => {
+    axios.get('/cart').then((result) => {
       console.log(result.data);
       this.setState({ cart: result.data });
     });
   }
 
+  // addItem(id, quantity) {
+  //   axios.post('/add').then((result));
+  // }
+
   render() {
     const { cart } = this.state;
     return (
-      <h1>{cart}</h1>
+      <div>
+        <Inventory />
+        <Cart />
+      </div>
     );
   }
 }

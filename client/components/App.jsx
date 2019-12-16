@@ -8,7 +8,11 @@ class App extends Component {
     super(props);
     this.state = {
       inventory: [],
-      cart: {},
+      cart: {
+        cartId: '',
+        items: {},
+        total: 0,
+      },
     };
     this.addToCart = this.addToCart.bind(this);
     this.clearCart = this.clearCart.bind(this);
@@ -30,6 +34,7 @@ class App extends Component {
   getCart() {
     axios.get('/cart')
       .then((result) => {
+        console.log(result.data);
         this.setState({ cart: result.data });
       })
       .catch((err) => console.log(err));
@@ -60,6 +65,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

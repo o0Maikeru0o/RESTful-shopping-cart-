@@ -50,7 +50,7 @@ const Item = ({
   const [quantity, setQuantity] = useState(0);
 
   const handleSubmit = () => {
-    addToCart(id, quantity);
+    addToCart(id, parseInt(quantity, 10));
   };
 
   let volumeInfo;

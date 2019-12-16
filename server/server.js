@@ -3,13 +3,14 @@ const session = require('express-session');
 const parser = require('body-parser');
 const Cart = require('./cart');
 const inventory = require('./inventory');
+const secret = require('../config');
 
 const app = express();
 const PORT = 1337;
 const carts = {};
 
 app.use(session({
-  secret: 'F98A3A2945EEE',
+  secret,
   resave: true,
   saveUninitialized: true,
 }));
@@ -56,7 +57,7 @@ app.post('/add', async (req, res) => {
     if (!carts[req.session.id]) {
       carts[req.session.id] = await new Cart(req.session.id);
     }
-    await carts[req.session.id].addToCart(id, parseInt(quantity, 10));
+    await carts[req.session.id].addToCart(id, quantity);
     res.status(201).send(carts[req.session.id]);
   } catch (err) {
     console.log(err);

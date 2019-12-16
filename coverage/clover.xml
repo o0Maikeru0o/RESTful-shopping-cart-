@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1576505880068" clover="3.2.0">
+  <project timestamp="1576505880068" name="All files">
+    <metrics statements="33" coveredstatements="33" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7" elements="48" coveredelements="48" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
+    <file name="cart.js" path="/Users/maikeru/coding projects/shopping-cart/server/cart.js">
+      <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="5" count="5" type="stmt"/>
+      <line num="6" count="5" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="11" count="49" type="stmt"/>
+      <line num="13" count="22" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="10" type="stmt"/>
+      <line num="18" count="10" type="stmt"/>
+      <line num="20" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="10" type="stmt"/>
+      <line num="25" count="10" type="stmt"/>
+      <line num="27" count="22" type="stmt"/>
+      <line num="31" count="22" type="stmt"/>
+      <line num="32" count="22" type="stmt"/>
+      <line num="34" count="22" type="stmt"/>
+      <line num="35" count="44" type="stmt"/>
+      <line num="36" count="44" type="stmt"/>
+      <line num="41" count="20" type="stmt"/>
+      <line num="42" count="20" type="stmt"/>
+      <line num="43" count="20" type="stmt"/>
+      <line num="45" count="20" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="15" type="stmt"/>
+      <line num="48" count="15" type="stmt"/>
+      <line num="49" count="15" type="stmt"/>
+      <line num="50" count="15" type="stmt"/>
+      <line num="53" count="20" type="stmt"/>
+      <line num="54" count="20" type="stmt"/>
+      <line num="55" count="20" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+    </file>
+    <file name="inventory.js" path="/Users/maikeru/coding projects/shopping-cart/server/inventory.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

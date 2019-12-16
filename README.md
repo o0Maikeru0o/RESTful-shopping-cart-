@@ -17,7 +17,7 @@ Run command `npm install` from the console in this application's directory to in
 
 Run command `npm start` from the console in this application's directory to start the Express server with Nodemon monitoring changes.
 
-Run command 'npm run build' from the console in this application's directory to run Webpack for bundling and compiling with Babel
+Run command `pm run build` from the console in this application's directory to run Webpack for bundling and compiling with Babel
 
 -The default port for the server is 1337
 

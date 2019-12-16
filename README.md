@@ -1,5 +1,5 @@
 # RESTful-shopping-cart
-A simple shopping cart application that allows adding and removing of several fruit items to a persistant card issued by a session id
+A simple shopping cart application that allows adding and removing of several fruit items to a persistant cart issued by the server using a session id
 
 ## Getting Started
 

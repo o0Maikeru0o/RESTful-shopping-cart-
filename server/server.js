@@ -3,14 +3,14 @@ const session = require('express-session');
 const parser = require('body-parser');
 const Cart = require('./cart');
 const inventory = require('./inventory');
-const secret = require('../config');
 
 const app = express();
 const PORT = 1337;
 const carts = {};
 
 app.use(session({
-  secret,
+  // In production the secret should be placed in a .env and not made public
+  secret: 'MmgRVrlCdHoV9Jzz9y3TQMY9iNkeUR68',
   resave: true,
   saveUninitialized: true,
 }));

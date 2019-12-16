@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import axios from 'axios';
 // import Cart from './Cart';
-import Item from './Item';
-// import Inventory from './Inventory';
+import Inventory from './Inventory';
 
-const Inventory = styled.div`
-  display: flex;
-  width: 75%;
-  height: 100%;
-  justify-content: center;
-`;
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +12,7 @@ class App extends Component {
       inventory: [],
       cart: {},
     };
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount() {
@@ -28,37 +22,29 @@ class App extends Component {
   getInventory() {
     axios.get('/inventory').then((result) => {
       this.setState({ inventory: result.data });
-    });
+    })
+      .catch((err) => console.log(err));
   }
 
   getCart() {
     axios.get('/cart').then((result) => {
       this.setState({ cart: result.data });
-    });
+    })
+      .catch((err) => console.log(err));
   }
 
-  // addItem(id, quantity) {
-  //   axios.post('/add').then((result));
-  // }
+  addToCart(id, quantity) {
+    axios.post('/add', { id, quantity }).then((result) => {
+      this.setState({ cart: result.data });
+    })
+      .catch((err) => console.log(err));
+  }
 
   render() {
     const { cart, inventory } = this.state;
-    const items = inventory.map((item) => (
-      <Item
-        key={item.id}
-        desc={item.description}
-        image={item.image}
-        price={item.unit_price}
-        volume={item.volume_discounts}
-      />
-    ));
+
     return (
-
-      <Inventory>
-        {items}
-      </Inventory>
-
-
+      <Inventory inventory={inventory} addToCart={this.addToCart} />
     );
   }
 }

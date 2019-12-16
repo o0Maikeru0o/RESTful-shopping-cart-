@@ -8,7 +8,7 @@ class Cart {
     this.total = 0;
   }
 
-  addItems(id, quantity) {
+  addToCart(id, quantity) {
     const item = inventory.find((inv) => inv.id === id);
     console.log('inv item', item);
     if (this.items[id]) {

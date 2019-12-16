@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ItemContainer = styled.div`
@@ -31,16 +31,16 @@ const Volume = styled.table`
   }
 `;
 
-const AddQuantity = styled.input`
-  type: number;
-`;
-
 const Item = ({
-  image, desc, price, volume,
+  id, image, desc, price, volume, addToCart,
 }) => {
-  console.log('item props', desc);
-  let volumeInfo;
+  const [quantity, setQuantity] = useState(0);
 
+  const handleSubmit = () => {
+    addToCart(id, quantity);
+  };
+
+  let volumeInfo;
   if (volume.length > 0) {
     volumeInfo = volume.map((disc) => (
       <tr key={disc.number}>
@@ -78,10 +78,8 @@ const Item = ({
           </tbody>
         </Volume>
       </ItemInfo>
-      <form>
-        <input type="number" name="quantity" />
-        <input type="submit" />
-      </form>
+      <input type="number" name="quantity" onChange={(e) => setQuantity(e.target.value)} />
+      <input type="submit" onClick={() => { handleSubmit(); }} />
     </ItemContainer>
 
   );

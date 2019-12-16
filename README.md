@@ -29,25 +29,25 @@ Run command `npm test` to begin unit tests with Jest
 
 // Retreive current cart
 
-  Get to '/cart'
+    Get to '/cart'
 
 // Retreive current inventory
 
-  Get to '/inventory'
+    Get to '/inventory'
 
 // Create a new cart if none exists
 
-  Post to '/create'
+    Post to '/create'
 
 // Add or remove items from the cart
 
-  Post to '/add'
+    Post to '/add'
 
-  data sent in body of http request as {id: string, quantity: number}
+    Data sent in body of http request as {id: string, quantity: number}
 
 // Clear the cart and reset totals
 
-  Delete to '/clear'
+    Delete to '/clear'
 
 
 ## Configuration

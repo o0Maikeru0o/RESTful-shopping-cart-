@@ -1,6 +1,10 @@
 # RESTful-shopping-cart
 A simple shopping cart application that allows adding and removing of several fruit items to a persistant cart issued by the server using a session id
 
+Run on the command line to store application locally
+
+    git clone https://github.com/o0Maikeru0o/RESTful-shopping-cart-
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

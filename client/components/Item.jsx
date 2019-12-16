@@ -24,11 +24,24 @@ const Volume = styled.table`
   font-size: 15px;
   width: 100%;
   max-height: 30%;
-  border: 1px solid black;
   border-collapse: collapse;
   th, td {
     border: 1px solid black;
   }
+`;
+
+const QuantityInput = styled.input`
+  font-size: 14px;
+  margin-top: 5px;
+  width: 50px;
+  type: number;
+`;
+
+const SubmitButton = styled.button`
+  type: submit;
+  margin-left: 5px;
+  height: 19px;
+  width: 75px;
 `;
 
 const Item = ({
@@ -63,9 +76,11 @@ const Item = ({
       <Image src={image} alt={desc} />
       <ItemInfo>
         <h3>{desc}</h3>
+        <h4>
         Unit Price:
-        {' '}
-        {price}
+          {' '}
+          {price}
+        </h4>
         <Volume>
           <tbody>
             <tr>
@@ -79,8 +94,8 @@ const Item = ({
           </tbody>
         </Volume>
       </ItemInfo>
-      <input type="number" name="quantity" onChange={(e) => setQuantity(e.target.value)} />
-      <button type="submit" onClick={() => { handleSubmit(); }}>Add to cart</button>
+      <QuantityInput type="number" name="quantity" onChange={(e) => setQuantity(e.target.value)} />
+      <SubmitButton type="submit" onClick={() => { handleSubmit(); }}>Add to cart</SubmitButton>
     </ItemContainer>
   );
 };

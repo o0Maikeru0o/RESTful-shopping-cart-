@@ -4,6 +4,7 @@ import CartItem from './CartItem';
 
 const CartContainer = styled.div`
   display: block;
+  position: absolute;
   margin-left: 25%;
   width: 25%;
   height: 100%;
@@ -44,6 +45,7 @@ const Cart = ({ cart, clearCart }) => {
 
   return (
     <CartContainer>
+      <h3>Shopping Cart</h3>
       <CartItems>
         <tbody>
           <tr>

@@ -22,7 +22,7 @@ Run command `npm run build` from the console in this application's directory to 
 
 Run command `npm start` from the console in this application's directory to start the Express server with Nodemon monitoring changes.
 
--The default port for the server is 1337
+-The default port for the server is 1337 on the local host. There are no additional paths.
 
 ## Running the tests
 

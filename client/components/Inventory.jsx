@@ -21,6 +21,7 @@ const Inventory = ({ inventory, addToCart }) => {
       addToCart={addToCart}
     />
   ));
+
   return (
     <InventoryContainer>
       {items}

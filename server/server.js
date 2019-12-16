@@ -56,7 +56,7 @@ app.post('/add', async (req, res) => {
     if (!carts[req.session.id]) {
       carts[req.session.id] = await new Cart(req.session.id);
     }
-    await carts[req.session.id].addToCart(id, quantity);
+    await carts[req.session.id].addToCart(id, parseInt(quantity, 10));
     res.status(201).send(carts[req.session.id]);
   } catch (err) {
     console.log(err);
@@ -66,12 +66,8 @@ app.post('/add', async (req, res) => {
 
 app.delete('/clear', (req, res) => {
   try {
-    if (carts[req.session.id]) {
-      delete carts[req.session.id];
-      res.status(202).send('Cart cleared');
-    } else {
-      res.status(400).send('Cart not found');
-    }
+    delete carts[req.session.id];
+    res.status(202).send('Cart cleared');
   } catch (err) {
     console.log(err);
     res.send(err);

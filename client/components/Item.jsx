@@ -41,6 +41,7 @@ const Item = ({
   };
 
   let volumeInfo;
+
   if (volume.length > 0) {
     volumeInfo = volume.map((disc) => (
       <tr key={disc.number}>
@@ -79,9 +80,8 @@ const Item = ({
         </Volume>
       </ItemInfo>
       <input type="number" name="quantity" onChange={(e) => setQuantity(e.target.value)} />
-      <input type="submit" onClick={() => { handleSubmit(); }} />
+      <button type="submit" onClick={() => { handleSubmit(); }}>Add to cart</button>
     </ItemContainer>
-
   );
 };
 

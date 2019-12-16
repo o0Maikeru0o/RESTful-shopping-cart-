@@ -1,4 +1,3 @@
-
 const inventory = [{
   id: 'A',
   image: 'https://mnickandros-coding-projects.s3.amazonaws.com/RedApple__23344.1570489422.jpeg',
